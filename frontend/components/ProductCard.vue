@@ -4,6 +4,16 @@
       <b-skeleton v-if="isLoading" width="100%" height="200px"></b-skeleton>
       <figure v-if="!isLoading" class="image is-4by3">
         <img id="image" :src="product.imageUrl" />
+        <p
+          v-if="!isLoading && product.originalPrice !== product.currentPrice"
+          class="procent-overlay"
+        >
+          {{
+            ((product.originalPrice / product.currentPrice - 1) * 100).toFixed(
+              0
+            )
+          }}%
+        </p>
       </figure>
     </div>
     <div class="card-content">
@@ -127,5 +137,22 @@ export default {
   color: red;
   font-weight: bolder;
   font-size: 110%;
+}
+
+.container {
+  position: relative;
+}
+.container img {
+  display: block;
+}
+.container .procent-overlay {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: transparent;
+  color: red;
+  font-size: xx-large;
+  font-weight: bold;
 }
 </style>
