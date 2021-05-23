@@ -2,11 +2,11 @@
   <div class="hero">
     <div class="content">
       <small>The wardrobe</small>
-      <h1>Clothes for<br />every ocation</h1>
+      <h1>Clothes for<br />every occasion</h1>
       <button type="button">Se dig omkring</button>
     </div>
     <div class="side-bar">
-      <img class="menu" alt="menu" />
+      <!-- <img class="menu" alt="menu" /> -->
     </div>
 
     <div class="bubbles">
@@ -68,12 +68,12 @@ button {
   z-index: 2;
 }
 
-h1 {
+.content h1 {
   color: #fbfcfd;
   font-size: 80px;
   margin: 10px 0 30px;
   line-height: 80px;
-  margin-top: 0px;
+  margin-top: 0px !important;
 }
 
 .logo {
