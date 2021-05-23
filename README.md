@@ -4,9 +4,12 @@ Display a number of images from api
 ## Installation 
 
 * Install node
+* run cd frontend
 * run npm install
 * run npm run build
+* run cd ..
 * run cd backend
+* run npm install
 * run node index.js
 * goto localhost:5000
 

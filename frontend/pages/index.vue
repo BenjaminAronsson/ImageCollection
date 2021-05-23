@@ -3,7 +3,9 @@
     <div class="content">
       <small>The wardrobe</small>
       <h1>Clothes for<br />every occasion</h1>
-      <button type="button">Se dig omkring</button>
+      <nuxt-link :to="{ name: 'products' }" exact-active-class="is-active">
+        <button type="button">Se dig omkring</button>
+      </nuxt-link>
     </div>
     <div class="side-bar">
       <!-- <img class="menu" alt="menu" /> -->
