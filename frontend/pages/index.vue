@@ -1,12 +1,24 @@
 <template>
-  <section>
-    <b-image
-      src="https://www.460fss.com/wp-content/uploads/2021/01/FCC-Photo.jpg"
-      alt="A child image"
-      ratio="6by4"
-      :rounded="rounded"
-    ></b-image>
-  </section>
+  <div class="hero">
+    <div class="content">
+      <small>The wardrobe</small>
+      <h1>Clothes for<br />every ocation</h1>
+      <button type="button">Se dig omkring</button>
+    </div>
+    <div class="side-bar">
+      <img class="menu" alt="menu" />
+    </div>
+
+    <div class="bubbles">
+      <img src="../assets/bubble.png" />
+      <img src="../assets/bubble.png" />
+      <img src="../assets/bubble.png" />
+      <img src="../assets/bubble.png" />
+      <img src="../assets/bubble.png" />
+      <img src="../assets/bubble.png" />
+      <img src="../assets/bubble.png" />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -18,3 +30,140 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-image: url(assets/background.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+button {
+  color: #fbfcfd;
+  padding: 10px 25px;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+}
+
+.content {
+  color: #fbfcfd;
+  margin-top: 0px;
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+h1 {
+  color: #fbfcfd;
+  font-size: 80px;
+  margin: 10px 0 30px;
+  line-height: 80px;
+  margin-top: 0px;
+}
+
+.logo {
+  width: 100px;
+  cursor: pointer;
+}
+
+.navbar {
+  width: 85;
+  height: 15;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.side-bar {
+  width: 50px;
+  height: 100vh;
+  background: linear-gradient(#00545d, #000729);
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.menu {
+  display: block;
+  width: 25px;
+  margin: 40px auto 0;
+  cursor: pointer;
+}
+
+.bubbles img {
+  width: 50px;
+
+  animation: bubble 7s linear infinite;
+}
+
+.bubbles {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+}
+
+@keyframes bubble {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-80vh);
+    opacity: 0;
+  }
+}
+
+.bubbles img:nth-child(1) {
+  animation-delay: 2s;
+  width: 25px;
+}
+.bubbles img:nth-child(2) {
+  animation-delay: 2.5s;
+  width: 35px;
+}
+.bubbles img:nth-child(3) {
+  animation-delay: 1s;
+  width: 20px;
+}
+.bubbles img:nth-child(4) {
+  width: 15px;
+  animation-delay: 2.3s;
+}
+.bubbles img:nth-child(5) {
+  width: 45px;
+  animation-delay: 1s;
+}
+.bubbles img:nth-child(6) {
+  animation-delay: 3s;
+  width: 25px;
+}
+.bubbles img:nth-child(7) {
+  animation-delay: 0.5s;
+  width: 30px;
+}
+</style>

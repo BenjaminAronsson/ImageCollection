@@ -6,7 +6,7 @@
       aria-label="main navigation"
     >
       <div class="navbar-brand">
-        <a class="navbar-item" href="/"> Image collection </a>
+        <a class="navbar-item" href="/">The wardrobe</a>
 
         <div class="navbar-burger">
           <span />
@@ -17,8 +17,9 @@
     </nav>
 
     <section class="main-content columns">
-      <aside class="column is-2 section">
-        <p class="menu-label is-hidden-touch">General</p>
+      <aside id="menu" class="column is-2 section">
+        <p class="menu-label is-hidden-touch">Meny</p>
+        <div class="spacer"></div>
         <ul class="menu-list">
           <li v-for="(item, key) of items" :key="key">
             <nuxt-link :to="item.to" exact-active-class="is-active">
@@ -41,12 +42,12 @@ export default {
     return {
       items: [
         {
-          title: "Home",
+          title: "Hem",
           icon: "home",
           to: { name: "index" },
         },
         {
-          title: "products",
+          title: "Produkter",
           icon: "view-dashboard",
           to: { name: "products" },
         },
@@ -55,3 +56,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.spacer {
+  background-color: lightgray;
+  width: 100%;
+  height: 2px;
+}
+</style>

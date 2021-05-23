@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-tabs @input="tabChanged" position="is-centered" v-model="activeTab">
-      <b-tab-item label="All"></b-tab-item>
+      <b-tab-item label="Alla"></b-tab-item>
       <b-tab-item label="A-Z">
         <b-tabs
           @input="tabChanged"
@@ -82,7 +82,7 @@ export default {
       placeholderProduct: {
         imageUrl:
           "https://designshack.net/wp-content/uploads/placeholder-image.png",
-        title: "We have no products with the current filter",
+        title: "Vi har inga produkter som matchar det angivna filtret",
         originalPrice: null,
         currentPrice: null,
       },

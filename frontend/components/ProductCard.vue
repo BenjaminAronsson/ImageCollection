@@ -9,9 +9,11 @@
           class="procent-overlay"
         >
           {{
-            ((product.originalPrice / product.currentPrice - 1) * 100).toFixed(
-              0
-            )
+            (
+              ((product.originalPrice - product.currentPrice) /
+                product.originalPrice) *
+              100
+            ).toFixed(0)
           }}%
         </p>
       </figure>
@@ -54,8 +56,8 @@
     </div>
     <div class="card-footer">
       <div v-if="buttonIsVisible" class="card-footer-item">
-        <a class="button is-button is-medium is-fullwidth" @click="addToCart"
-          >Add to cart</a
+        <a class="button is-button is-medium is-fullwidth" @click="addToCart">
+          Lägg i kundvagn</a
         >
       </div>
     </div>
