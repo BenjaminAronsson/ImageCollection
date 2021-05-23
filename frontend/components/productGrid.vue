@@ -46,7 +46,19 @@
           v-for="product in filteredProducts"
           :key="product.id"
         >
-          <product-card ref="card" :product="product"></product-card>
+          <product-card
+            :product="product"
+            :isLoading="isLoading"
+          ></product-card>
+        </div>
+      </div>
+      <div class="columns is-multiline">
+        <div class="column is-one-quarter" v-if="filteredProducts.length < 1">
+          <product-card
+            :product="placeholderProduct"
+            :buttonIsVisible="false"
+            :isLoading="isLoading"
+          ></product-card>
         </div>
       </div>
     </section>
@@ -67,6 +79,13 @@ export default {
       activeLetter: 0,
       filteredProducts: [],
       isLoading: true,
+      placeholderProduct: {
+        imageUrl:
+          "https://designshack.net/wp-content/uploads/placeholder-image.png",
+        title: "We have no products with the current filter",
+        originalPrice: null,
+        currentPrice: null,
+      },
     };
   },
   props: ["products"],
@@ -87,6 +106,7 @@ export default {
   watch: {
     products: function (newVal, oldVal) {
       this.filteredProducts = newVal;
+      this.isLoading = false;
     },
   },
 };

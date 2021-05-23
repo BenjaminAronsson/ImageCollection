@@ -1,35 +1,52 @@
 <template>
   <div class="card" id="card">
     <div class="card-image">
-      <figure class="image is-4by3">
+      <b-skeleton v-if="isLoading" width="100%" height="200px"></b-skeleton>
+      <figure v-if="!isLoading" class="image is-4by3">
         <img id="image" :src="product.imageUrl" />
       </figure>
     </div>
     <div class="card-content">
       <div class="is-mobile">
         <div class="level-item">
-          <p class="level-left title is-6">{{ product.title }}</p>
+          <p v-if="!isLoading" class="level-left title is-6">
+            {{ product.title }}
+          </p>
+          <b-skeleton
+            v-if="isLoading"
+            width="80%"
+            :animated="true"
+          ></b-skeleton>
         </div>
         <div class="level-item">
-          <P
+          <p
+            v-if="!isLoading && product.originalPrice !== null"
             v-bind:class="[
               product.originalPrice !== product.currentPrice ? 'old-price' : '',
               'subtitle',
             ]"
-            >{{ product.originalPrice }}kr</P
           >
-          <span></span>
+            {{ product.originalPrice }}kr
+          </p>
+          <div style="margin-top: 15px; height: 15px"></div>
           <P
-            v-if="product.originalPrice !== product.currentPrice"
+            v-if="!isLoading && product.originalPrice !== product.currentPrice"
             class="subtitle current-price"
             >{{ product.currentPrice }}kr</P
           >
+          <b-skeleton
+            v-if="isLoading"
+            width="30%"
+            :animated="true"
+          ></b-skeleton>
         </div>
       </div>
     </div>
     <div class="card-footer">
       <div v-if="buttonIsVisible" class="card-footer-item">
-        <a class="button is-button is-medium is-fullwidth">Add to cart</a>
+        <a class="button is-button is-medium is-fullwidth" @click="addToCart"
+          >Add to cart</a
+        >
       </div>
     </div>
   </div>
@@ -45,15 +62,20 @@ export default {
     },
   },
   name: "ProductCard",
+  methods: {
+    addToCart() {
+      alert("Looks like you need a developer to help you....");
+    },
+  },
   props: {
     product: {},
-    isHoverable: {
-      type: Boolean,
-      default: true,
-    },
     buttonIsVisible: {
       type: Boolean,
       default: true,
+    },
+    isLoading: {
+      type: Boolean,
+      default: false,
     },
   },
 };
