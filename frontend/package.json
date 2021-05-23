@@ -11,19 +11,19 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
-    "@nuxtjs/pwa": "^3.3.5",
-    "core-js": "^3.9.1",
-    "nuxt": "^2.15.3",
-    "nuxt-buefy": "^0.4.4"
+    "@nuxtjs/pwa": "3.3.5",
+    "core-js": "3.9.1",
+    "nuxt": "2.15.3",
+    "nuxt-buefy": "0.4.4"
   },
   "devDependencies": {
-    "@nuxt/types": "^2.15.3",
-    "@nuxt/typescript-build": "^2.1.0",
-    "@nuxtjs/eslint-config-typescript": "^6.0.0",
-    "@nuxtjs/eslint-module": "^3.0.2",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.22.0",
-    "eslint-plugin-nuxt": "^2.0.0",
-    "eslint-plugin-vue": "^7.7.0"
+    "@nuxt/types": "2.15.3",
+    "@nuxt/typescript-build": "2.1.0",
+    "@nuxtjs/eslint-config-typescript": "6.0.0",
+    "@nuxtjs/eslint-module": "3.0.2",
+    "babel-eslint": "10.1.0",
+    "eslint": "7.22.0",
+    "eslint-plugin-nuxt": "2.0.0",
+    "eslint-plugin-vue": "7.7.0"
   }
 }
