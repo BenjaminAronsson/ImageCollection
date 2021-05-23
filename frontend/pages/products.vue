@@ -5,13 +5,11 @@
 </template>
 
 <script>
-import Card from "~/components/Card";
 import ProductGrid from "../components/productGrid";
 
 export default {
   name: "HomePage",
   components: {
-    Card,
     ProductGrid,
   },
   mounted() {
