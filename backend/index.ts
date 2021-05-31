@@ -31,10 +31,12 @@ app.listen(5000, () => {
 //#region - Frontend application
 
 app.use(express.static(path.join(path.resolve(), "../frontend/dist")));
-
+//const productUrl = "https://www.ellos.se/api/articles?path=herr%2Fbadklader";
+const babyProductUrl =
+  "https://www.ellos.se/api/articles?path=barn%2Fbabyklader-stl-50-92";
 const options = {
   method: "GET",
-  url: "https://www.ellos.se/api/articles?path=barn%2Fbabyklader-stl-50-92",
+  url: babyProductUrl,
   headers: {},
 };
 

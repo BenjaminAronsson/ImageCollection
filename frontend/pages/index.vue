@@ -3,7 +3,7 @@
     <div class="content">
       <small>The wardrobe</small>
       <h1>Clothes for<br />every occasion</h1>
-      <nuxt-link :to="{ name: 'products' }" exact-active-class="is-active">
+      <nuxt-link to="/products" exact-active-class="is-active">
         <button type="button">Se dig omkring</button>
       </nuxt-link>
     </div>

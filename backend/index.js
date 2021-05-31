@@ -26,9 +26,11 @@ app.listen(5000, function () {
 //#endregion
 //#region - Frontend application
 app.use(express.static(path.join(path.resolve(), "../frontend/dist")));
+//const productUrl = "https://www.ellos.se/api/articles?path=herr%2Fbadklader";
+var babyProductUrl = "https://www.ellos.se/api/articles?path=barn%2Fbabyklader-stl-50-92";
 var options = {
     method: "GET",
-    url: "https://www.ellos.se/api/articles?path=barn%2Fbabyklader-stl-50-92",
+    url: babyProductUrl,
     headers: {}
 };
 app.get("/api/products/", function (request, apiResponse) {
